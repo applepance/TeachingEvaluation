@@ -5,20 +5,22 @@
       <el-table-column
         prop="college"
         label="院系"
-        width="180">
+        width="287">
       </el-table-column>
       <el-table-column
         prop="number"
         label="教师编号"
-        width="180">
+        width="287">
       </el-table-column>
       <el-table-column
         prop="name"
-        label="姓名">
+        label="姓名"
+         width="287">
       </el-table-column>
       <el-table-column
         prop="evaluate"
-        label="好评率">
+        label="好评率"
+         width="287">
       </el-table-column>
     </el-table>
   </template>
