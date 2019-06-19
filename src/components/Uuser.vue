@@ -8,60 +8,68 @@
         class="input"
         type="number"
       ></el-input>
-      <el-button type="primary" icon="el-icon-search" size="mini" @click="matchInformation">搜索</el-button>
+      <el-button type="primary" icon="el-icon-search" size="mini" @click="matchInformation(content)">搜索</el-button>
       <el-button type="primary" icon="el-icon-circle-close" size="mini">取消</el-button>
     </div>
     <div class="box" :model="formLabelAlign">
       <span>{{formLabelAlign.studentName}}</span>
     </div>
-    <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign" ref="formLabelAlign">
+    <el-form label-width="80px" :model="formLabelAlign" ref="formLabelAlign">
       <el-form-item label="新课程的课程编号" class="num">
-        <el-input type="number" v-model="formLabelAlign.num" class="updateNumber"></el-input>
+        <el-input type="number" v-model="num" class="updateNumber"></el-input>
       </el-form-item>
       <el-form-item label="新课程的课程名称" class="name">
-        <el-input v-model="formLabelAlign.name" class="updateName"></el-input>
+        <el-input v-model="lesson" class="updateName"></el-input>
       </el-form-item>
 
   <el-form-item>
-    <el-button type="primary" @click="submitForm('formLabelAlign')">更新</el-button>
+    <el-button type="primary" @click="updateUser(formLabelAlign)">更新</el-button>
   </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "Umsg",
   data() {
     return {
       content: "",
+      student: this.$store.state.student,
+      class: this.$store.state.class,
       formLabelAlign: {
-        studentName:'',
-        num: 0,
-        name: ""
-        
+        num: "",
+        lesson: "",
+        studentName: ""
       },
-      
+      num: "",
+      lesson: ""
     };
   },
   methods: {
-    matchInformation () {
-      const data = {
-        num: 100000,
-        name: "数学",
-        studentName:"张三"
-      }
-      this.formLabelAlign = data
-    },
-    submitForm(formLabelAlign) {
-      this.$refs[formLabelAlign].validate(valid => {
-        if (valid) {
-          alert("更新!");
-        } else {
-          console.log("更新失败!!");
-          return false;
+    matchInformation(content) {
+      let nowStudent =
+        this.student.find(Student => Student.no === content) || {};
+      nowStudent.studentName = nowStudent.name;
+      this.class.forEach(cla => {
+        if (cla.lessonNo === nowStudent.lessonNo) {
+          nowStudent.num = cla.lessonNo;
+          nowStudent.lesson = cla.lesson;
         }
       });
+      this.formLabelAlign = nowStudent;
+      this.num = this.formLabelAlign.num;
+      this.lesson = this.formLabelAlign.lesson;
+    },
+    ...mapActions(["updateUser"])
+  },
+  watch: {
+    num: function() {
+      this.formLabelAlign.num = this.num;
+    },
+    lesson: function() {
+      this.formLabelAlign.lesson = this.lesson;
     }
   }
 };
