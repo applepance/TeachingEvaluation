@@ -1,107 +1,76 @@
 <template>
-  <div class="container">
-    <div class="inputAndButton">
-      <el-input
-        placeholder="请输入学生编号"
-        prefix-icon="el-icon-search"
-        v-model="content"
-        class="input"
-        type="number"
-      ></el-input>
-      <el-button type="primary" icon="el-icon-search" size="mini">搜索</el-button>
-      <el-button type="primary" icon="el-icon-circle-close" size="mini">取消</el-button>
-    </div>
-    <div class="box">
-      <span>{{studentName}}</span>
-    </div>
-    <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign" ref="formLabelAlign">
-      <el-form-item label="要删除的课程编号" class="num">
-        <el-input type="number" v-model="formLabelAlign.num" class="updateNumber"></el-input>
-      </el-form-item>
-      <el-form-item label="要删除的课程名称" class="name">
-        <el-input v-model="formLabelAlign.name" class="updateName"></el-input>
-      </el-form-item>
-      <el-form-item label="要删除的教师名称" class="teacherName">
-        <el-input v-model="formLabelAlign.name" class="updateTeacherName"></el-input>
-      </el-form-item>
+  <el-table
+    :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+    style="width: 100%">
+    <!-- <Student></Student> -->
+    <el-table-column label="学院" prop="college"></el-table-column>
+    <el-table-column label="编号" prop="number"></el-table-column>
+    <el-table-column label="姓名" prop="name"></el-table-column>
+    <el-table-column label="课程编号" prop="class"></el-table-column>
+    <el-table-column label="课程名称" prop="title"></el-table-column>
+    <el-table-column label="学期" prop="semester"></el-table-column>
 
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('formLabelAlign')">删除</el-button>
-  </el-form-item>
-    </el-form>
-  </div>
+    <el-table-column align="right"><template slot="header">
+        <el-input
+          v-model="search"
+          size="mini"
+          placeholder="输入关键字搜索"/>
+      </template>
+      <template slot-scope="scope">
+        
+        <el-button
+          size="mini"
+          type="danger"
+          @click="handleDelete(scope.$index, tableData)">Delete</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
 </template>
 
 <script>
-export default {
-  name: "Umsg",
-  data() {
-    return {
-      content: "",
-      formLabelAlign: {
-        num: 0,
-        name: ""
-      },
-      teacherName:'老王'
-    };
-  },
-  methods: {
-    submitForm(formLabelAlign) {
-      this.$refs[formLabelAlign].validate(valid => {
-        if (valid) {
-          alert("submit!");
-        } else {
-          console.log("error submit!!");
-          return false;
-        }
-      });
+import Student from '@/components/Student'
+  export default {
+    data() {
+      return {
+        tableData: [{
+          college:'软件',
+          number:'201620180101',
+          name:'张三',
+          class:'000001',
+          title:'数学',
+          semester:'2018-2019'
+        }, {
+          college:'软件',
+          number:'201620180102',
+          name:'李四',
+          class:'000002',
+          title:'英语',
+          semester:'2018-2019'
+        }, {
+          college:'软件',
+          number:'201620180134',
+          name:'王五',
+          class:'00007',
+          title:'语文',
+          semester:'2018-2019'
+        }, {
+          college:'软件',
+          number:'201620180111',
+          name:'赵六',
+          class:'000003',
+          title:'物理',
+          semester:'2018-2019'
+        }],
+        search: ''
+      }
+    },
+    methods: {
+      handleDelete (index, rows) {
+        rows.splice(index, 1);
+      }
+    },
+    components:{
+      Student
     }
   }
-};
 </script>
-
-<style scoped>
-.container .input {
-  width: 214px;
-  margin-right: 10px;
-}
-.container .box{
-  width: 100px;
-  height: 30px;
-  border: 1px solid #000000;
-  margin-left: 79px;
-  text-align: center;
-  position: relative;
-  margin-bottom: 30px;;
-}
-.container .box span{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%)
-}
-.container .num {
-  width: 400px;
-}
-.container .name {
-  width: 400px;
-}
-.el-form-item__label{
-  width: 105px;
-}
-.el-form-item__content{
-  margin-left: 0;
-}
-.updateNumber{
-  margin-top: 20px;
-}
-.updateName{
-  margin-top: 20px;
-}
-.teacherName{
-  width: 400px;
-}
-.updateTeacherName{
-  margin-top: 20px;
-}
-</style>
