@@ -30,24 +30,19 @@
         return {
           tableData: [{
             college: '软件',
-            number:'1',
-            name: '李小龙',
-            evaluate: '90%'
+            number:'1101',
+            name: '王小虎',
+            evaluate: '100%'
           }, {
             college: '软件',
-            number:'2',
-            name: '李小龙',
-            evaluate: '90%'
+            number:'1102',
+            name: '李强',
+            evaluate: '80%'
           },{
             college: '软件',
-            number:'3',
-            name: '李小龙',
-            evaluate: '90%'
-          },{
-            college: '软件',
-            number:'4',
-            name: '李小龙',
-            evaluate: '90%'
+            number:'1103',
+            name: '阿水',
+            evaluate: '100%'
           },]
         }
       }
