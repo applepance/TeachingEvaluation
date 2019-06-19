@@ -1,7 +1,7 @@
 <template>
   <el-table
     :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
-    style="width: 100%">
+    style="width: 100%" stripe='true'>
     <!-- <Student></Student> -->
     <el-table-column label="学院" prop="college"></el-table-column>
     <el-table-column label="用户编号" prop="number"></el-table-column>
@@ -16,13 +16,7 @@
           size="mini"
           placeholder="输入关键字搜索"/>
       </template>
-      <template slot-scope="scope">
-        
-        <el-button
-          size="mini"
-          type="danger"
-          @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
-      </template>
+      
     </el-table-column>
   </el-table>
 </template>
@@ -31,7 +25,9 @@
 import Student from '@/components/Student'
   export default {
     data() {
+      
       return {
+        search:'',
         tableData: [{
           college:'软件',
           number:'201620180101',

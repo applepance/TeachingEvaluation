@@ -5,7 +5,7 @@
       <el-form-item label="学院">
         <el-input v-model="formLabelAlign.college"></el-input>
       </el-form-item>
-      <el-form-item label="编号">
+      <el-form-item label="用户编号">
         <el-input v-model="formLabelAlign.number"></el-input>
       </el-form-item>
       <el-form-item label="姓名">
@@ -17,7 +17,7 @@
       <el-form-item label="课程名称">
         <el-input v-model="formLabelAlign.title" ></el-input>
       </el-form-item>
-      <el-form-item label="学期">
+      <el-form-item label="学期年份">
         <el-input v-model="formLabelAlign.semester" ></el-input>
       </el-form-item>
     </el-form>

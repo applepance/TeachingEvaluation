@@ -1,7 +1,7 @@
 <template>
   <el-table
     :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
-    style="width: 100%">
+    style="width: 100%" stripe='true'>
     <!-- <Student></Student> -->
     <el-table-column prop="college" label="所属院系"></el-table-column>
     <el-table-column prop="no" label="教师编号"></el-table-column>
@@ -25,62 +25,31 @@ import Student from '@/components/Student'
   export default {
     data() {
       return {
+      search:'',
       tableData: [
+        {
+          no: "1101",
+          college: "软件",
+          name: "王小虎",
+          lessonNo: "111101",
+          lesson: "软件工程",
+          date: "2018-2019第二学期"
+        },
         {
           no: "1102",
           college: "软件",
-          name: "李大夫",
-          lessonNo: "111101",
-          lesson: "JAVA",
-          date: "2018-2019"
+          name: "李强",
+          lessonNo: "111102",
+          lesson: "算法",
+          date: "2018-2019第二学期",
         },
         {
           no: "1103",
           college: "软件",
-          name: "王欧文",
-          lessonNo: "111101",
-          lesson: "JSP",
-          date: "2018-2019",
-        },
-        {
-          no: "1104",
-          college: "软件",
-          name: "于大宝",
-          lessonNo: "111101",
-          lesson: "c++",
-          date: "2018-2019" 
-        },
-        {
-          no: "1105",
-          college: "软件",
-          name: "何惧",
-          lessonNo: "111101",
-          lesson: "c",
-          date: "2018-2019"
-        },
-        {
-          no: "1106",
-          college: "软件",
-          name: "史蒂芬",
-          lessonNo: "111101",
-          lesson: "英语",
-          date: "2018-2019"
-        },
-        {
-          no: "1107",
-          college: "软件",
-          name: "尔特",
-          lessonNo: "111101",
-          lesson: "语文",
-          date: "2018-2019"
-        },
-        {
-          no: "1108",
-          college: "软件",
-          name: "暖阳",
-          lessonNo: "111101",
-          lesson: "数学",
-          date: "2018-2019"
+          name: "阿水",
+          lessonNo: "111103",
+          lesson: "数据结构",
+          date: "2018-2019第二学期" 
         }
       ]
     };
