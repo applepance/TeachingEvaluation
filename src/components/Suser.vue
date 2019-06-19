@@ -4,7 +4,7 @@
     style="width: 100%">
     <!-- <Student></Student> -->
     <el-table-column label="学院" prop="college"></el-table-column>
-    <el-table-column label="编号" prop="number"></el-table-column>
+    <el-table-column label="用户编号" prop="number"></el-table-column>
     <el-table-column label="姓名" prop="name"></el-table-column>
     <el-table-column label="课程编号" prop="class"></el-table-column>
     <el-table-column label="课程名称" prop="title"></el-table-column>

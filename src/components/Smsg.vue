@@ -9,11 +9,8 @@
     <el-table-column prop="lessonNo" label="课程编号"></el-table-column>
     <el-table-column prop="lesson" label="课程名称"></el-table-column>
     <el-table-column prop="date" label="上课学期"></el-table-column>
-    <el-table-column prop="adress" label="居住地"></el-table-column>
-    <el-table-column prop="age" label="年龄"></el-table-column>
-    <el-table-column prop="marriage" label="婚否"></el-table-column>
     <el-table-column align="right">
-      <template slot="header">
+      <template slot="header" >
         <el-input
           v-model="search"
           size="mini"
@@ -30,81 +27,60 @@ import Student from '@/components/Student'
       return {
       tableData: [
         {
-          no: "1101",
+          no: "1102",
           college: "软件",
           name: "李大夫",
           lessonNo: "111101",
           lesson: "JAVA",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019"
         },
         {
-          no: "1101",
+          no: "1103",
           college: "软件",
           name: "王欧文",
           lessonNo: "111101",
           lesson: "JSP",
           date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
         },
         {
-          no: "1101",
+          no: "1104",
           college: "软件",
           name: "于大宝",
           lessonNo: "111101",
           lesson: "c++",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019" 
         },
         {
-          no: "1101",
+          no: "1105",
           college: "软件",
           name: "何惧",
           lessonNo: "111101",
           lesson: "c",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019"
         },
         {
-          no: "1101",
+          no: "1106",
           college: "软件",
           name: "史蒂芬",
           lessonNo: "111101",
           lesson: "英语",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019"
         },
         {
-          no: "1101",
+          no: "1107",
           college: "软件",
           name: "尔特",
           lessonNo: "111101",
           lesson: "语文",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019"
         },
         {
-          no: "1101",
+          no: "1108",
           college: "软件",
           name: "暖阳",
           lessonNo: "111101",
           lesson: "数学",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019"
         }
       ]
     };

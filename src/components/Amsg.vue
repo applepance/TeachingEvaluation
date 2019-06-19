@@ -8,9 +8,6 @@
     <el-table-column prop="lessonNo" label="课程编号"></el-table-column>
     <el-table-column prop="lesson" label="课程名称"></el-table-column>
     <el-table-column prop="date" label="上课学期"></el-table-column>
-    <el-table-column prop="adress" label="居住地"></el-table-column>
-    <el-table-column prop="age" label="年龄"></el-table-column>
-    <el-table-column prop="marriage" label="婚否"></el-table-column>
     <el-table-column
       fixed="right"
       label="操作"
