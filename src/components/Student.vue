@@ -40,11 +40,20 @@ export default {
           rate: 0
         },
         {
-          no: "1102",
+          no: "1103",
           college: "软件",
           name: "阿水",
-          lessonNo: "111102",
+          lessonNo: "111103",
           lesson: "数据结构",
+          date: "2018-2019第二学期",
+          rate: 0
+        },
+        {
+          no: "1101",
+          college: "软件",
+          name: "王小虎",
+          lessonNo: "111105",
+          lesson: "sql",
           date: "2018-2019第二学期",
           rate: 0
         }
