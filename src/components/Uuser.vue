@@ -12,7 +12,7 @@
       <el-button type="primary" icon="el-icon-circle-close" size="mini">取消</el-button>
     </div>
     <div class="box" :model="formLabelAlign">
-      <span>{{studentName}}</span>
+      <span>{{formLabelAlign.studentName}}</span>
     </div>
     <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign" ref="formLabelAlign">
       <el-form-item label="新课程的课程编号" class="num">
@@ -20,12 +20,6 @@
       </el-form-item>
       <el-form-item label="新课程的课程名称" class="name">
         <el-input v-model="formLabelAlign.name" class="updateName"></el-input>
-      </el-form-item>
-      <el-form-item label="新课程的教师名称" class="teacherName">
-        <el-input v-model="formLabelAlign.teachername" class="updateTeacherName"></el-input>
-      </el-form-item>
-      <el-form-item label="新课程的教师编号" class="teacherNum">
-        <el-input v-model="formLabelAlign.teacherNum" class="updateTeacherName"></el-input>
       </el-form-item>
 
   <el-form-item>
@@ -44,8 +38,8 @@ export default {
       formLabelAlign: {
         studentName:'',
         num: 0,
-        name: "",
-        teacherName:''
+        name: ""
+        
       },
       
     };
@@ -53,18 +47,18 @@ export default {
   methods: {
     matchInformation () {
       const data = {
-        num: 222,
-        name: "xxx",
-        studentName:"xxx"
+        num: 100000,
+        name: "数学",
+        studentName:"张三"
       }
       this.formLabelAlign = data
     },
     submitForm(formLabelAlign) {
       this.$refs[formLabelAlign].validate(valid => {
         if (valid) {
-          alert("submit!");
+          alert("更新!");
         } else {
-          console.log("error submit!!");
+          console.log("更新失败!!");
           return false;
         }
       });

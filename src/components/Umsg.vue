@@ -53,9 +53,9 @@ export default {
     submitForm(formLabelAlign) {
       this.$refs[formLabelAlign].validate(valid => {
         if (valid) {
-          alert("submit!");
+          alert("更新!");
         } else {
-          console.log("error submit!!");
+          console.log("更新失败!!");
           return false;
         }
       });
