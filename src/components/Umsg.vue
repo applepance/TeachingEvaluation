@@ -44,9 +44,9 @@ export default {
   methods: {
     matchInformation () {
       const data = {
-        num: 111,
-        name: "zzz",
-        teacherName:"zzz"
+        num: 111101,
+        name: "JAVA",
+        teacherName:"王小虎"
       }
       this.formLabelAlign = data
     },

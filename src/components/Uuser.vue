@@ -24,6 +24,9 @@
       <el-form-item label="新课程的教师名称" class="teacherName">
         <el-input v-model="formLabelAlign.teachername" class="updateTeacherName"></el-input>
       </el-form-item>
+      <el-form-item label="新课程的教师编号" class="teacherNum">
+        <el-input v-model="formLabelAlign.teacherNum" class="updateTeacherName"></el-input>
+      </el-form-item>
 
   <el-form-item>
     <el-button type="primary" @click="submitForm('formLabelAlign')">更新</el-button>
@@ -110,6 +113,10 @@ export default {
 }
 .teacherName{
   width: 400px;
+}
+.teacherNum{
+  width: 400px;
+  margin-top: 20px;
 }
 .updateTeacherName{
   margin-top: 20px;

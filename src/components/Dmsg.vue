@@ -9,22 +9,14 @@
     <el-table-column prop="lessonNo" label="课程编号"></el-table-column>
     <el-table-column prop="lesson" label="课程名称"></el-table-column>
     <el-table-column prop="date" label="上课学期"></el-table-column>
-    <el-table-column prop="adress" label="居住地"></el-table-column>
-    <el-table-column prop="age" label="年龄"></el-table-column>
-    <el-table-column prop="marriage" label="婚否"></el-table-column>
     <el-table-column align="right">
       <template slot="header">
-        <el-input
-          type="text"
-          v-model="search"
-          size="mini"
-          placeholder="输入关键字搜索"/>
       </template>
       <template slot-scope="scope">
         <el-button
           size="mini"
           type="danger"
-          @click.native.prevent="handleDelete(scope.$index, tableData)">Delete</el-button>
+          @click.native.prevent="handleDelete(scope.$index, tableData)">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -40,79 +32,62 @@ import Student from '@/components/Student'
         {
           no: "1101",
           college: "软件",
-          name: "李大夫",
+          name: "王小虎",
           lessonNo: "111101",
           lesson: "JAVA",
-          date: "2018-2019",
+          date: "2018-2019第二学期",
           adress:'',
           age:'',
           marriage:''
         },
         {
-          no: "1101",
+          no: "1102",
           college: "软件",
-          name: "王欧文",
-          lessonNo: "111101",
-          lesson: "JSP",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          name: "李强",
+          lessonNo: "111102",
+          lesson: "算法",
+          date: "2018-2019第二学期",
         },
         {
-          no: "1101",
+          no: "1103",
           college: "软件",
           name: "于大宝",
-          lessonNo: "111101",
+          lessonNo: "111103",
           lesson: "c++",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019第二学期",
         },
         {
-          no: "1101",
+          no: "1104",
           college: "软件",
           name: "何惧",
-          lessonNo: "111101",
+          lessonNo: "111104",
           lesson: "c",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019第二学期",
         },
         {
-          no: "1101",
+          no: "1105",
           college: "软件",
           name: "史蒂芬",
-          lessonNo: "111101",
+          lessonNo: "111105",
           lesson: "英语",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019第二学期",
         },
         {
-          no: "1101",
+          no: "1106",
           college: "软件",
           name: "尔特",
-          lessonNo: "111101",
+          lessonNo: "111106",
           lesson: "语文",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019第二学期",
         },
         {
-          no: "1101",
+          no: "1107",
           college: "软件",
           name: "暖阳",
-          lessonNo: "111101",
+          lessonNo: "111107",
           lesson: "数学",
-          date: "2018-2019",
-          adress:'',
-          age:'',
-          marriage:''
+          date: "2018-2019第二学期",
+
         }
       ]
     };

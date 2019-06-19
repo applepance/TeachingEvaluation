@@ -11,17 +11,13 @@
     <el-table-column label="学期" prop="semester"></el-table-column>
 
     <el-table-column align="right"><template slot="header">
-        <el-input
-          v-model="search"
-          size="mini"
-          placeholder="输入关键字搜索"/>
       </template>
       <template slot-scope="scope">
         
         <el-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.$index, tableData)">Delete</el-button>
+          @click="handleDelete(scope.$index, tableData)">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -65,7 +61,7 @@ import Student from '@/components/Student'
       }
     },
     methods: {
-      handleDelete (index, rows) {
+       handleDelete (index, rows) {
         rows.splice(index, 1);
       }
     },
