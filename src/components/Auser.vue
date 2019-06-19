@@ -38,9 +38,15 @@ export default {
     };
   },
   methods:{
-    add(){
+    
+    add() {
       
-    }
+          alert("添加成功!");
+        
+          
+        }
+      
+    
   }
 };
 </script>

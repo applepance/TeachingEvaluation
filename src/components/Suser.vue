@@ -56,6 +56,13 @@ import Student from '@/components/Student'
           class:'000003',
           title:'物理',
           semester:'2018-2019'
+        },{
+          college:'1',
+          number:'1',
+          name:'赵六',
+          class:'1',
+          title:'1',
+          semester:'1'
         }],
         search: ''
       }
@@ -63,7 +70,8 @@ import Student from '@/components/Student'
     methods: {
       handleDelete(index, row) {
         console.log(index, row);
-      }
+      },
+      
     },
     components:{
       Student
