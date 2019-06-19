@@ -6,9 +6,10 @@
     <el-table-column prop="lessonNo" label="课程编号"></el-table-column>
     <el-table-column prop="lesson" label="课程名称"></el-table-column>
     <el-table-column prop="date" label="上课学期"></el-table-column>
-    <el-table-column label="操作" width="100" fixed="right">
+    <el-table-column prop="rate" label="操作" fixed="right">
       <template slot-scope="scope">
-        <el-button @click="handleClick(scope.row)" type="text" size="small">评测</el-button>
+        <el-rate v-if="scope.row.rate != 0" v-model="scope.row.rate" show-text disabled></el-rate>
+        <el-rate v-else v-model="scope.row.rate" show-text @change="changeRate(scope.row)"></el-rate>
       </template>
     </el-table-column>
   </el-table>
@@ -26,7 +27,8 @@ export default {
           name: "王小虎",
           lessonNo: "111101",
           lesson: "XXX课",
-          date: "2018-2019第二学期"
+          date: "2018-2019第二学期",
+          rate: 0
         },
         {
           no: "1101",
@@ -34,7 +36,8 @@ export default {
           name: "王小虎",
           lessonNo: "111101",
           lesson: "XXX课",
-          date: "2018-2019第二学期"
+          date: "2018-2019第二学期",
+          rate: 0
         },
         {
           no: "1101",
@@ -42,7 +45,8 @@ export default {
           name: "王小虎",
           lessonNo: "111101",
           lesson: "XXX课",
-          date: "2018-2019第二学期"
+          date: "2018-2019第二学期",
+          rate: 0
         },
         {
           no: "1101",
@@ -50,7 +54,8 @@ export default {
           name: "王小虎",
           lessonNo: "111101",
           lesson: "XXX课",
-          date: "2018-2019第二学期"
+          date: "2018-2019第二学期",
+          rate: 0
         },
         {
           no: "1101",
@@ -58,7 +63,8 @@ export default {
           name: "王小虎",
           lessonNo: "111101",
           lesson: "XXX课",
-          date: "2018-2019第二学期"
+          date: "2018-2019第二学期",
+          rate: 0
         },
         {
           no: "1101",
@@ -66,7 +72,8 @@ export default {
           name: "王小虎",
           lessonNo: "111101",
           lesson: "XXX课",
-          date: "2018-2019第二学期"
+          date: "2018-2019第二学期",
+          rate: 0
         },
         {
           no: "1101",
@@ -74,13 +81,14 @@ export default {
           name: "王小虎",
           lessonNo: "111101",
           lesson: "XXX课",
-          date: "2018-2019第二学期"
+          date: "2018-2019第二学期",
+          rate: 0
         }
       ]
     };
   },
   methods: {
-    handleClick(row) {
+    changeRate (row) {
       console.log(row)
     }
   }
