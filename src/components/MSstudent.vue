@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <div v-for="(data,index) in list" :key="index">
+      <div>{{data.date}}</div>
       <el-table :data="data.tableData" stripe style="width: 100%">
         <el-table-column prop="college" label="所属院系"></el-table-column>
         <el-table-column prop="no" label="教师编号"></el-table-column>
@@ -32,131 +33,27 @@ export default {
               college: "软件",
               name: "王小虎",
               lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
+              lesson: "软件工程",
+              date: "2018-2019第一学期",
               rate: 5
             },
             {
-              no: "1101",
+              no: "1102",
               college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 1
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 2
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 3
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
+              name: "李强",
+              lessonNo: "111102",
+              lesson: "算法",
+              date: "2018-2019第一学期",
               rate: 4
             },
             {
-              no: "1101",
+              no: "1102",
               college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
+              name: "阿水",
+              lessonNo: "111102",
+              lesson: "数据结构",
+              date: "2018-2019第一学期",
               rate: 5
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 1
-            }
-          ]
-        },
-        {
-          date: "大三第二学期",
-          tableData: [
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 5
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 1
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 2
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 3
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 4
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 5
-            },
-            {
-              no: "1101",
-              college: "软件",
-              name: "王小虎",
-              lessonNo: "111101",
-              lesson: "XXX课",
-              date: "2018-2019第二学期",
-              rate: 1
             }
           ]
         }
