@@ -6,7 +6,7 @@
         <el-input v-model="user" placeholder="请输入账号"></el-input>
       </div>
       <div class="msg mt20">
-        <el-input v-model="password" placeholder="请输入密码"></el-input>
+        <el-input v-model="password" type="password" placeholder="请输入密码"></el-input>
       </div>
       <div class="btn mt20">
         <el-button type="primary" @click="login">登录</el-button>
